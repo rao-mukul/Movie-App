@@ -5,7 +5,7 @@ import io.my.movie_app_v1.entity.Movie;
 import java.util.List;
 
 public interface MovieService {
-    public String createMovie(Movie movie);
+    String createMovie(Movie movie);
 
     List<Movie> getAllMovies();
 

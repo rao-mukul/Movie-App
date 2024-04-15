@@ -24,7 +24,7 @@ public class Movie {
     private double movieRating;
     @Column(length = 10,nullable = false)
     private String genre;
-    @Column(length = 50,nullable = true)
+    @Column(length = 50)
     private String movieDetails;
     @Column(nullable = false)
     private LocalDate releaseYear;
