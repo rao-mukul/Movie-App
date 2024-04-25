@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -15,8 +16,9 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "movie_table")
 public class Movie {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int movieId;
     @Column(length = 20,nullable = false,unique = true)
     private String movieName;
@@ -28,4 +30,10 @@ public class Movie {
     private String movieDetails;
     @Column(nullable = false)
     private LocalDate releaseYear;
+
+    @OneToMany(mappedBy = "movie")
+    private List<Ticket> tickets;
+
+    @OneToMany(mappedBy = "movie")
+    private List<ShowTime> showTimes;
 }
